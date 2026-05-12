@@ -40,7 +40,7 @@ def get_user(session: Session, username: str):
     user = session.get(UserInDB, username)
     if user is None:
         return None
-    return UserInDB(username=user.username, hashed_password=user.hashed_password)
+    return user
 
 
 def authenticate_user(session: Session, username: str, password: str):
